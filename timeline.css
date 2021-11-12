@@ -1,0 +1,146 @@
+/* CaDCC Timeline Template */
+:root {
+    --yellow: #ffd91e;
+    --blue: #2c5aa0;
+    --green: #00ada0;
+    --pink: #ff2a7f;
+    --violet: #1a0856;
+    --gray: #606898;
+    --black: #111;
+}
+
+
+/* Whole timeline */
+.timeline {
+    position: relative;
+    left: 60px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/* Timeline line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background: var(--gray);
+    top: 0;
+    bottom: 0;
+    left: 32px;
+    background: linear-gradient(to bottom, rgba(230, 230, 230, 0) 0%, var(--gray) 10%, var(--gray) 90%, rgba(230, 230, 230, 0) 100%);
+}
+
+
+/* Timeline element container */
+.tlcontainer {
+    left: 16px;
+    padding: 15px 30px;
+    position: relative;
+    background: inherit;
+    width: 95%;
+}
+
+
+/* Circle */
+.tlcontainer::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: calc(50% - 8px);
+    left: 7px;
+    background: #ffffff;
+    border: 2px solid var(--gray);
+    border-radius: 16px;
+    z-index: 1;
+}
+
+
+/* Line to circle */
+.tlcontainer::before {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    top: calc(50% - 1px);
+    left: 8px;
+    right: 16px;
+    background: var(--gray);
+    z-index: -1;
+}
+
+
+/* Date */
+.tlcontainer .tldate {
+    position: absolute;
+    display: inline-block;
+    top: calc(50% - 8px);
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 1;
+    left: -75px;
+}
+
+.tlcontent {
+    border-radius: 15px;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+/* Content box */
+.tlcontainer .tlcontent {
+    padding: 30px;
+    /*background: inherited;*/
+    position: relative;
+    border: 15px solid transparent;
+    border-width: 0px 0px 0px 10px;
+}
+
+
+/* Alternate CaDCC Colors for each item */
+.tlcontainer:nth-child(4n - 1) .tlcontent {
+    border-left-color: var(--green);
+}
+
+.tlcontainer:nth-child(4n - 2) .tlcontent {
+    border-left-color: var(--pink);
+}
+
+.tlcontainer:nth-child(4n - 3) .tlcontent {
+    border-left-color: var(--yellow);
+}
+
+.tlcontainer:nth-child(4n - 0) .tlcontent {
+    border-left-color: var(--blue);
+}
+
+
+/* Text styles */
+.tlcontainer .tlcontent h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: normal;
+    color: var(--gray);
+}
+
+.tlcontainer .tlcontent p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+
+
+/* Interior content */
+.tlic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+}
+
